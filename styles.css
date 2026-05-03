@@ -147,16 +147,23 @@ a:hover {
 }
 
 .logo {
-  font-family: var(--font-serif);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--deep-green);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  letter-spacing: 0.02em;
+  line-height: 0;
 }
 
-.logo:hover {
-  color: var(--soil);
+.logo__img {
+  display: block;
+  height: clamp(2.25rem, 4.5vw, 3.25rem);
+  width: auto;
+  max-width: min(220px, 52vw);
+  object-fit: contain;
+  object-position: left center;
+}
+
+.logo:hover .logo__img {
+  opacity: 0.9;
 }
 
 .nav__list {
