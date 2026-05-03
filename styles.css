@@ -16,7 +16,13 @@
   --radius-pill: 999px;
   --font-serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-sans: "Nunito Sans", system-ui, -apple-system, sans-serif;
+  /* Header min-height; scales with html font-size */
   --header-h: 4.25rem;
+  /* Layout caps in px (16px rem baseline) so text can scale without widening the whole page */
+  --container-max: 1152px;
+  --container-narrow-max: 704px;
+  --measure: 576px;
+  --measure-wide: 640px;
 }
 
 *,
@@ -27,6 +33,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* ~Chrome 160% zoom feel: scales rem-based type, spacing, radii, and most UI */
+  font-size: 160%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -39,7 +47,7 @@ body {
   margin: 0;
   font-family: var(--font-sans);
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.62;
   color: var(--text);
   background-color: var(--cream);
 }
@@ -128,7 +136,7 @@ a:hover {
 }
 
 .site-header__inner {
-  max-width: 72rem;
+  max-width: var(--container-max);
   margin: 0 auto;
   padding: 0.85rem 1.25rem;
   display: flex;
@@ -178,12 +186,12 @@ a:hover {
 
 /* Layout */
 .container {
-  width: min(72rem, 100% - 2.5rem);
+  width: min(var(--container-max), 100% - 2.5rem);
   margin-inline: auto;
 }
 
 .container.narrow {
-  width: min(44rem, 100% - 2.5rem);
+  width: min(var(--container-narrow-max), 100% - 2.5rem);
 }
 
 .section {
@@ -234,7 +242,7 @@ a:hover {
 
 .section__intro {
   text-align: center;
-  max-width: 36rem;
+  max-width: var(--measure);
   margin: 0 auto 0.75rem;
   color: var(--text-muted);
   font-size: 1.05rem;
@@ -275,7 +283,7 @@ a:hover {
 /* Hero */
 .hero {
   position: relative;
-  min-height: min(88vh, 46rem);
+  min-height: min(88vh, 736px);
   display: grid;
   align-items: end;
   padding: calc(var(--header-h) + 2rem) 1.25rem 3.5rem;
@@ -297,7 +305,7 @@ a:hover {
 .hero__content {
   position: relative;
   z-index: 1;
-  max-width: 40rem;
+  max-width: var(--measure-wide);
 }
 
 .hero .eyebrow {
@@ -312,10 +320,10 @@ a:hover {
 
 .hero__lede {
   font-size: clamp(1.05rem, 2.2vw, 1.2rem);
-  line-height: 1.65;
+  line-height: 1.62;
   color: color-mix(in srgb, var(--cream) 96%, transparent);
   margin-bottom: 1.75rem;
-  max-width: 36rem;
+  max-width: var(--measure);
 }
 
 .hero__actions {
@@ -619,6 +627,11 @@ a:hover {
   margin-bottom: 0.4rem;
 }
 
+.label-optional {
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
 .form-field input,
 .form-field textarea {
   width: 100%;
@@ -709,6 +722,11 @@ fieldset.form-field {
 
 /* Mobile nav */
 @media (max-width: 520px) {
+  .container,
+  .container.narrow {
+    width: min(var(--container-max), 100% - 1.25rem);
+  }
+
   .site-header__inner {
     flex-direction: column;
     align-items: flex-start;
