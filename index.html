@@ -21,9 +21,16 @@
 
       <header class="site-header">
         <div class="site-header__inner">
-          <a class="logo" href="#hero">
-          <img class="logo__img" src="headerlogo.png" alt="Soil and Sky" fetchpriority="high" />
-        </a>
+          <a class="logo" href="#hero" aria-label="Soil and Sky — home">
+            <span class="logo__mark" aria-hidden="true">
+              <span class="logo__mark-layer logo__mark-layer--sky"></span>
+              <span class="logo__mark-layer logo__mark-layer--hills"></span>
+              <span class="logo__mark-layer logo__mark-layer--soil"></span>
+            </span>
+            <span class="logo__wordmark" aria-hidden="true">
+              <span class="logo__name">Soil</span><span class="logo__amp">&amp;</span><span class="logo__name">Sky</span>
+            </span>
+          </a>
           <nav class="nav" aria-label="Primary">
             <ul class="nav__list">
               <li><a href="#hero">Home</a></li>
@@ -38,15 +45,21 @@
       <main id="main-content">
         <!-- Hero -->
         <section id="hero" class="hero" aria-labelledby="hero-heading">
-          <div class="hero__bg" role="img" aria-label="Soft outdoor forest light"></div>
+          <img
+            class="hero__img"
+            src="assets/beach_silhouettes_min.jpg"
+            width="1531"
+            height="589"
+            alt="Silhouettes on a beach at sunset: a group in the distance and someone in the foreground taking a photo on a phone—Soil and Sky, less screen time, more nature."
+            fetchpriority="high"
+            decoding="async"
+          />
+          <div class="hero__scrim" aria-hidden="true"></div>
           <div class="hero__content">
-            <p class="eyebrow">Nature-based child care &amp; enrichment</p>
-            <h1 id="hero-heading" class="hero__title">Less screen time. More nature.</h1>
-            <p class="hero__lede">
-              Soil and Sky is small-group and one-on-one outdoor care for families who want more than a
-              busy room or a screen as a reward. Real teaching happens through play—trees, clouds, water,
-              how we eat and clean up together—then families get a recap so the learning continues at home.
-            </p>
+            <h1 id="hero-heading" class="hero__title">
+              Less screen time, more nature.
+            </h1>
+            
             <div class="hero__actions">
               <a class="btn btn--primary" href="#contact">Book a Nature Session</a>
               <a class="btn btn--secondary" href="#contact">Ask About Event Support</a>
@@ -57,7 +70,6 @@
         <!-- What Soil and Sky Is (nav: About) -->
         <section id="about" class="section section--cream" aria-labelledby="what-heading">
           <div class="container narrow">
-            <p class="eyebrow eyebrow--center">What Soil and Sky Is</p>
             <h2 id="what-heading" class="section__title">Nature-based learning and playful care for curious kids.</h2>
             <div class="prose">
               <p>
@@ -92,7 +104,7 @@
             <p class="section__placeholder-note">
               <span class="placeholder">[Pricing — add when ready]</span>
             </p>
-            <div class="cards cards--3">
+            <div class="cards">
               <article class="card">
                 <h3 class="card__title">Nature Learning Sessions</h3>
                 <p class="card__tagline">Small-group outdoor learning for 1 to 4 children.</p>
@@ -233,7 +245,7 @@
           <div class="container">
             <h2 id="testimonials-heading" class="section__title">Loved by local families</h2>
             <p class="section__intro">Sample wording—replace with real quotes and permission when you have them.</p>
-            <div class="cards cards--3 testimonials">
+            <div class="cards testimonials">
               <figure class="card card--quote">
                 <blockquote>
                   <p>
@@ -241,7 +253,6 @@
                     talk about the trees and the songs on the ride home.”
                   </p>
                 </blockquote>
-                <figcaption class="quote__cite"><span class="placeholder">Parent name (placeholder)</span></figcaption>
               </figure>
               <figure class="card card--quote">
                 <blockquote>
@@ -250,7 +261,6 @@
                     and smaller setting made a real difference in how they treat their body and their words.”
                   </p>
                 </blockquote>
-                <figcaption class="quote__cite"><span class="placeholder">Parent name (placeholder)</span></figcaption>
               </figure>
               <figure class="card card--quote">
                 <blockquote>
@@ -259,7 +269,6 @@
                     home, and the sense that someone truly sees our kid.”
                   </p>
                 </blockquote>
-                <figcaption class="quote__cite"><span class="placeholder">Parent name (placeholder)</span></figcaption>
               </figure>
             </div>
           </div>
