@@ -919,6 +919,225 @@ fieldset.form-field {
   margin: 0;
 }
 
+/* Photo placeholders — soft brand-tinted cards until real photography is in.
+   Swap the .ph background for an <img> later without changing the layout. */
+.ph {
+  position: relative;
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid color-mix(in srgb, var(--deep-green) 14%, transparent);
+  background:
+    radial-gradient(ellipse 90% 70% at 22% 22%, color-mix(in srgb, var(--cream) 80%, white) 0%, transparent 60%),
+    radial-gradient(ellipse 80% 60% at 82% 78%, color-mix(in srgb, var(--soil) 18%, transparent) 0%, transparent 60%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--sage) 65%, var(--cream)) 0%,
+      color-mix(in srgb, var(--sky) 55%, var(--cream)) 100%);
+}
+
+.ph::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 50% 55%, color-mix(in srgb, var(--deep-green) 22%, transparent) 0 0.18rem, transparent 0.22rem),
+    radial-gradient(circle at 50% 55%, transparent 0 0.6rem, color-mix(in srgb, var(--deep-green) 18%, transparent) 0.6rem 0.66rem, transparent 0.7rem);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+.ph--square { aspect-ratio: 1 / 1; }
+.ph--wide { aspect-ratio: 5 / 3; }
+.ph--portrait { aspect-ratio: 3 / 4; }
+
+/* Vary placeholder gradients so the strip doesn't read as a flat block */
+.ph--2 {
+  background:
+    radial-gradient(ellipse 80% 60% at 25% 28%, color-mix(in srgb, var(--cream) 78%, white) 0%, transparent 60%),
+    linear-gradient(150deg,
+      color-mix(in srgb, var(--soil) 32%, var(--cream)) 0%,
+      color-mix(in srgb, var(--sage) 55%, var(--cream)) 100%);
+}
+.ph--4 {
+  background:
+    radial-gradient(ellipse 80% 60% at 75% 30%, color-mix(in srgb, var(--cream) 78%, white) 0%, transparent 60%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--sky) 60%, var(--cream)) 0%,
+      color-mix(in srgb, var(--sage) 50%, var(--cream)) 100%);
+}
+.ph--5 {
+  background:
+    radial-gradient(ellipse 90% 70% at 25% 25%, color-mix(in srgb, var(--cream) 80%, white) 0%, transparent 55%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--sage) 80%, var(--cream)) 0%,
+      color-mix(in srgb, var(--soil) 22%, var(--cream)) 100%);
+}
+.ph--6 {
+  background:
+    radial-gradient(ellipse 85% 65% at 70% 30%, color-mix(in srgb, var(--cream) 78%, white) 0%, transparent 55%),
+    linear-gradient(150deg,
+      color-mix(in srgb, var(--sky) 55%, var(--cream)) 0%,
+      color-mix(in srgb, var(--soil) 26%, var(--cream)) 100%);
+}
+
+.ph__cap {
+  position: absolute;
+  left: 0.85rem;
+  bottom: 0.7rem;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  color: color-mix(in srgb, var(--deep-green) 88%, var(--text));
+  background: color-mix(in srgb, var(--white) 78%, transparent);
+  padding: 0.18rem 0.6rem;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 2px 10px rgba(47, 51, 44, 0.08);
+}
+
+/* Editorial photo strip in About section */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-block: clamp(2rem, 4vw, 3rem);
+}
+
+@media (min-width: 720px) {
+  .photo-strip {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+  .photo-strip .ph--1,
+  .photo-strip .ph--6 {
+    grid-column: span 2;
+    aspect-ratio: 2 / 1;
+  }
+  .photo-strip .ph--2,
+  .photo-strip .ph--3,
+  .photo-strip .ph--4,
+  .photo-strip .ph--5 {
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* "Moments" polaroid board in Why-Nature section */
+.moments {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+
+.moments__label {
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
+  color: color-mix(in srgb, var(--deep-green) 80%, var(--text));
+}
+
+.moments__board {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem 1.25rem;
+  justify-items: center;
+  align-items: start;
+  padding-block: 0.5rem 1rem;
+}
+
+@media (min-width: 720px) {
+  .moments__board {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    padding-block: 1.25rem 2rem;
+  }
+}
+
+.polaroid {
+  position: relative;
+  margin: 0;
+  background: var(--white);
+  padding: 0.55rem 0.55rem 0.85rem;
+  border-radius: 0.25rem;
+  box-shadow:
+    0 6px 18px rgba(47, 51, 44, 0.12),
+    0 1px 2px rgba(47, 51, 44, 0.08);
+  width: 100%;
+  max-width: 13rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+
+.polaroid:hover {
+  transform: rotate(0) translateY(-3px) scale(1.02);
+  box-shadow: 0 18px 38px rgba(47, 51, 44, 0.18);
+  z-index: 2;
+}
+
+.polaroid__photo {
+  aspect-ratio: 1 / 1;
+  border-radius: 2px;
+  border: 1px solid color-mix(in srgb, var(--deep-green) 12%, transparent);
+}
+
+.polaroid__photo--a {
+  background:
+    radial-gradient(ellipse 90% 70% at 25% 25%, color-mix(in srgb, var(--cream) 82%, white) 0%, transparent 60%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--sage) 70%, var(--cream)) 0%,
+      color-mix(in srgb, var(--sky) 55%, var(--cream)) 100%);
+}
+.polaroid__photo--b {
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 28%, color-mix(in srgb, var(--cream) 82%, white) 0%, transparent 55%),
+    linear-gradient(150deg,
+      color-mix(in srgb, var(--soil) 30%, var(--cream)) 0%,
+      color-mix(in srgb, var(--sage) 55%, var(--cream)) 100%);
+}
+.polaroid__photo--c {
+  background:
+    radial-gradient(ellipse 85% 65% at 30% 28%, color-mix(in srgb, var(--cream) 82%, white) 0%, transparent 55%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--sky) 60%, var(--cream)) 0%,
+      color-mix(in srgb, var(--soil) 25%, var(--cream)) 100%);
+}
+
+.polaroid__cap {
+  margin-top: 0.6rem;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: var(--deep-green);
+}
+
+/* Scattered rotations for the polaroid board (desktop) */
+@media (min-width: 720px) {
+  .polaroid--1 { transform: rotate(-3deg); margin-top: 0.5rem; }
+  .polaroid--2 { transform: rotate(2.5deg); margin-top: 1.75rem; }
+  .polaroid--3 { transform: rotate(-1.5deg); margin-top: 0.25rem; }
+  .polaroid--4 { transform: rotate(2deg); margin-top: 1.5rem; }
+  .polaroid--5 { transform: rotate(-2.5deg); margin-top: 0.5rem; }
+  .polaroid--6 { transform: rotate(1.5deg); margin-top: 1.25rem; }
+}
+
+/* Gentler rotations on tablet/phone so nothing crops or collides */
+@media (max-width: 719px) {
+  .polaroid--1 { transform: rotate(-2deg); }
+  .polaroid--2 { transform: rotate(1.5deg); }
+  .polaroid--3 { transform: rotate(-1deg); }
+  .polaroid--4 { transform: rotate(1.5deg); }
+  .polaroid--5 { transform: rotate(-1.5deg); }
+  .polaroid--6 { transform: rotate(1deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .polaroid { transform: none !important; transition: none; }
+  .polaroid:hover { transform: none !important; }
+}
+
 /* Mobile nav */
 @media (max-width: 520px) {
   .container,
