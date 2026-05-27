@@ -950,9 +950,22 @@ fieldset.form-field {
   pointer-events: none;
 }
 
+.ph--photo::after {
+  opacity: 0;
+}
+
 .ph--square { aspect-ratio: 1 / 1; }
 .ph--wide { aspect-ratio: 5 / 3; }
 .ph--portrait { aspect-ratio: 3 / 4; }
+
+.ph__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center calc(50% + 150px);
+}
 
 /* Vary placeholder gradients so the strip doesn't read as a flat block */
 .ph--2 {
