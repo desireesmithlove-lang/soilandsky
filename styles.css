@@ -967,6 +967,10 @@ fieldset.form-field {
   object-position: center calc(50% + 150px);
 }
 
+.ph--square .ph__img {
+  object-position: center;
+}
+
 /* Vary placeholder gradients so the strip doesn't read as a flat block */
 .ph--2 {
   background:
@@ -1061,8 +1065,8 @@ fieldset.form-field {
 
 @media (min-width: 720px) {
   .moments__board {
-    grid-template-columns: repeat(6, 1fr);
-    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(8.5rem, 1fr));
+    gap: 0.75rem;
     padding-block: 1.25rem 2rem;
   }
 }
@@ -1089,31 +1093,13 @@ fieldset.form-field {
 }
 
 .polaroid__photo {
+  display: block;
+  width: 100%;
   aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 2px;
   border: 1px solid color-mix(in srgb, var(--deep-green) 12%, transparent);
-}
-
-.polaroid__photo--a {
-  background:
-    radial-gradient(ellipse 90% 70% at 25% 25%, color-mix(in srgb, var(--cream) 82%, white) 0%, transparent 60%),
-    linear-gradient(135deg,
-      color-mix(in srgb, var(--sage) 70%, var(--cream)) 0%,
-      color-mix(in srgb, var(--sky) 55%, var(--cream)) 100%);
-}
-.polaroid__photo--b {
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 28%, color-mix(in srgb, var(--cream) 82%, white) 0%, transparent 55%),
-    linear-gradient(150deg,
-      color-mix(in srgb, var(--soil) 30%, var(--cream)) 0%,
-      color-mix(in srgb, var(--sage) 55%, var(--cream)) 100%);
-}
-.polaroid__photo--c {
-  background:
-    radial-gradient(ellipse 85% 65% at 30% 28%, color-mix(in srgb, var(--cream) 82%, white) 0%, transparent 55%),
-    linear-gradient(135deg,
-      color-mix(in srgb, var(--sky) 60%, var(--cream)) 0%,
-      color-mix(in srgb, var(--soil) 25%, var(--cream)) 100%);
+  background-color: color-mix(in srgb, var(--sage) 40%, var(--cream));
 }
 
 .polaroid__cap {
@@ -1134,6 +1120,7 @@ fieldset.form-field {
   .polaroid--4 { transform: rotate(2deg); margin-top: 1.5rem; }
   .polaroid--5 { transform: rotate(-2.5deg); margin-top: 0.5rem; }
   .polaroid--6 { transform: rotate(1.5deg); margin-top: 1.25rem; }
+  .polaroid--7 { transform: rotate(-1.5deg); margin-top: 0.75rem; }
 }
 
 /* Gentler rotations on tablet/phone so nothing crops or collides */
@@ -1144,6 +1131,7 @@ fieldset.form-field {
   .polaroid--4 { transform: rotate(1.5deg); }
   .polaroid--5 { transform: rotate(-1.5deg); }
   .polaroid--6 { transform: rotate(1deg); }
+  .polaroid--7 { transform: rotate(-1deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
