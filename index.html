@@ -93,12 +93,10 @@
                 <img class="ph__img" src="assets/images/donut.jpg" alt="" loading="lazy" decoding="async" />
                 <figcaption class="ph__cap">Story circle</figcaption>
               </figure>
-              <figure class="ph ph--square ph--3" aria-hidden="true"><figcaption class="ph__cap">Mud kitchen</figcaption></figure>
               <figure class="ph ph--square ph--photo ph--4" aria-hidden="true">
                 <img class="ph__img" src="assets/images/flowers.jpg" alt="" loading="lazy" decoding="async" />
                 <figcaption class="ph__cap">Leaf hunt</figcaption>
               </figure>
-              <figure class="ph ph--square ph--5" aria-hidden="true"><figcaption class="ph__cap">Sensory bin</figcaption></figure>
               <figure class="ph ph--wide ph--photo ph--6" aria-hidden="true">
                 <img class="ph__img" src="assets/images/beartree.jpg" alt="" loading="lazy" decoding="async" />
                 <figcaption class="ph__cap">Tree friends</figcaption>
@@ -224,10 +222,6 @@
                 <img class="polaroid__photo" src="./assets/images/beartree.jpg" alt="Sloth in tree moment at Soil and Sky" loading="lazy" decoding="async" />
                 <figcaption class="polaroid__cap">Flash Tree</figcaption>
               </figure>
-              <figure class="polaroid polaroid--2">
-                <img class="polaroid__photo" src="./assets/images/butterfly.jpg" alt="Butterfly moment at Soil and Sky" loading="lazy" decoding="async" />
-                <figcaption class="polaroid__cap">Butterfly</figcaption>
-              </figure>
               <figure class="polaroid polaroid--3">
                 <img class="polaroid__photo" src="./assets/images/donut.jpg" alt="Donut moment at Soil and Sky" loading="lazy" decoding="async" />
                 <figcaption class="polaroid__cap">Reading Time</figcaption>
@@ -239,10 +233,6 @@
               <figure class="polaroid polaroid--5">
                 <img class="polaroid__photo" src="./assets/images/plank.jpg" alt="Balancing moment at Soil and Sky" loading="lazy" decoding="async" />
                 <figcaption class="polaroid__cap">Balancing Skills</figcaption>
-              </figure>
-              <figure class="polaroid polaroid--6">
-                <img class="polaroid__photo" src="./assets/images/raised.jpg" alt="Flower Picking moment at Soil and Sky" loading="lazy" decoding="async" />
-                <figcaption class="polaroid__cap">Flower Picking</figcaption>
               </figure>
               <figure class="polaroid polaroid--7">
                 <img class="polaroid__photo" src="./assets/images/swing.jpg" alt="Swing moment at Soil and Sky" loading="lazy" decoding="async" />
@@ -257,9 +247,13 @@
           <div class="container">
             <div class="founder__grid">
               <div class="founder__visual">
-                <div class="founder__photo" role="img" aria-label="Founder photo placeholder">
-                  <span class="founder__photo-label">Founder photo</span>
-                </div>
+                <img
+                  class="founder__photo"
+                  src="assets/founder.jpg"
+                  alt="Portrait of the Soil and Sky founder"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
               <div class="founder__copy">
                 <p class="eyebrow eyebrow--dark">Meet the Founder</p>
@@ -294,12 +288,14 @@
                     teaching through every snack, cleanup, and barefoot sprint</strong>.
                   </p>
                 </div>
+                <!-- Temporarily hidden — restore when details are ready
                 <ul class="credential-card" aria-label="Credentials and service details">
                   <li><strong>Experience with children:</strong> <span class="placeholder">[Add details]</span></li>
                   <li><strong>CPR / First Aid:</strong> <span class="placeholder">[Add certification status]</span></li>
                   <li><strong>Service area:</strong> <span class="placeholder">[Add location]</span></li>
                   <li><strong>Ages served:</strong> <span class="placeholder">[Add ages]</span></li>
                 </ul>
+                -->
               </div>
             </div>
           </div>
@@ -309,7 +305,6 @@
         <section class="section section--cream" aria-labelledby="testimonials-heading">
           <div class="container">
             <h2 id="testimonials-heading" class="section__title">Loved by local families</h2>
-            <p class="section__intro">Sample wording—replace with real quotes and permission when you have them.</p>
             <div class="cards testimonials">
               <figure class="card card--quote">
                 <blockquote>
@@ -355,74 +350,14 @@
                 Soil and Sky will follow up with availability, session options, and next steps.
               </p>
               <p class="contact__email">
-                Prefer email? <span class="placeholder">[Contact email]</span>
+                Reach out anytime at
+                <a href="mailto:desireesmithlove@gmail.com">desireesmithlove@gmail.com</a>
               </p>
               <div class="contact__mini-cta">
-                <a class="btn btn--primary" href="#contact-form">Book a Nature Session</a>
-                <a class="btn btn--outline" href="#contact-form">Ask About Event Support</a>
+                <a class="btn btn--primary" href="mailto:desireesmithlove@gmail.com?subject=Book%20a%20Nature%20Session">Book a Nature Session</a>
+                <a class="btn btn--outline" href="mailto:desireesmithlove@gmail.com?subject=Event%20Support%20Inquiry">Ask About Event Support</a>
               </div>
             </div>
-            <form
-              id="contact-form"
-              class="contact-form card"
-              action="#"
-              method="post"
-              aria-describedby="form-note"
-            >
-              <p id="form-note" class="form-note">
-                <!-- Replace action with your form handler (Formspree, Netlify Forms, etc.) -->
-                Form destination is a placeholder — connect this form to your email or form service before launch.
-              </p>
-              <div class="form-field">
-                <label for="parent-name">Parent / Guardian Name</label>
-                <input id="parent-name" name="parent_name" type="text" autocomplete="name" required />
-              </div>
-              <div class="form-field">
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-              </div>
-              <div class="form-field">
-                <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" autocomplete="tel" />
-              </div>
-              <div class="form-field">
-                <label for="child-age">Child’s Age</label>
-                <input id="child-age" name="child_age" type="text" inputmode="numeric" />
-              </div>
-              <div class="form-field">
-                <label for="learning-style"
-                  >How does your child learn or regulate best? <span class="label-optional">(optional)</span></label
-                >
-                <textarea id="learning-style" name="learning_style" rows="2"></textarea>
-              </div>
-              <fieldset class="form-field">
-                <legend>Service Interest</legend>
-                <ul class="radio-list">
-                  <li>
-                    <label><input type="radio" name="service" value="nature-learning" /> Nature Learning Session</label>
-                  </li>
-                  <li>
-                    <label><input type="radio" name="service" value="one-on-one" /> One-on-One Nature Play</label>
-                  </li>
-                  <li>
-                    <label><input type="radio" name="service" value="event" /> Event Childcare</label>
-                  </li>
-                  <li>
-                    <label><input type="radio" name="service" value="unsure" checked /> Not Sure Yet</label>
-                  </li>
-                </ul>
-              </fieldset>
-              <div class="form-field">
-                <label for="availability">Preferred Days / Times</label>
-                <textarea id="availability" name="availability" rows="2"></textarea>
-              </div>
-              <div class="form-field">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-              </div>
-              <button type="submit" class="btn btn--primary btn--block">Contact Soil and Sky</button>
-              <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
-            </form>
           </div>
         </section>
       </main>
@@ -442,14 +377,6 @@
 
       <script>
         document.getElementById("year").textContent = new Date().getFullYear();
-        document.querySelector(".contact-form")?.addEventListener("submit", function (e) {
-          e.preventDefault();
-          var el = document.getElementById("form-feedback");
-          if (el) {
-            el.textContent =
-              "Preview: this form is not connected yet. Set the form action to your form handler or email endpoint before launch.";
-          }
-        });
       </script>
     </body>
   </html>

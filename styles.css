@@ -595,33 +595,20 @@ a:hover {
 
 @media (min-width: 900px) {
   .founder__grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    grid-template-columns: minmax(0, 16rem) minmax(0, 1fr);
     gap: 3rem;
     align-items: center;
   }
 }
 
 .founder__photo {
+  width: 100%;
+  max-width: 16rem;
   aspect-ratio: 4 / 5;
+  object-fit: cover;
   border-radius: var(--radius-lg);
-  background:
-    linear-gradient(145deg, color-mix(in srgb, var(--sage) 70%, white) 0%, color-mix(in srgb, var(--sky) 55%, white) 100%),
-    var(--sage);
   box-shadow: var(--shadow-card);
-  display: grid;
-  place-items: center;
   border: 1px solid color-mix(in srgb, var(--deep-green) 15%, transparent);
-}
-
-.founder__photo-label {
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--deep-green);
-  opacity: 0.75;
-  padding: 1rem;
-  text-align: center;
 }
 
 .credential-card {
@@ -719,14 +706,13 @@ a:hover {
 .contact-layout {
   display: grid;
   gap: 2rem;
+  max-width: var(--measure-wide);
+  margin-inline: auto;
+  text-align: center;
 }
 
-@media (min-width: 960px) {
-  .contact-layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-    gap: 3rem;
-    align-items: start;
-  }
+.contact__intro .section__title--left {
+  text-align: center;
 }
 
 .contact__intro p {
@@ -744,6 +730,7 @@ a:hover {
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.5rem;
+  justify-content: center;
 }
 
 .contact-form {
@@ -916,10 +903,6 @@ fieldset.form-field {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center calc(50% + 150px);
-}
-
-.ph--square .ph__img {
   object-position: center;
 }
 
@@ -983,16 +966,12 @@ fieldset.form-field {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
   }
-  .photo-strip .ph--1,
-  .photo-strip .ph--6 {
-    grid-column: span 2;
-    aspect-ratio: 2 / 1;
-  }
-  .photo-strip .ph--2,
-  .photo-strip .ph--3,
-  .photo-strip .ph--4,
-  .photo-strip .ph--5 {
+  .photo-strip .ph {
+    grid-column: auto;
     aspect-ratio: 1 / 1;
+  }
+  .photo-strip .ph__img {
+    object-position: center;
   }
 }
 
