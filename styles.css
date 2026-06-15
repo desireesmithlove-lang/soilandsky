@@ -852,6 +852,40 @@ fieldset.form-field {
   margin-bottom: 1rem;
 }
 
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 0 0 1.25rem;
+}
+
+.site-footer .social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--cream);
+  background: color-mix(in srgb, var(--cream) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cream) 35%, transparent);
+  border-radius: var(--radius-pill);
+  transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+}
+
+.site-footer .social-link:hover {
+  color: var(--white);
+  background: color-mix(in srgb, var(--cream) 22%, transparent);
+  border-color: var(--cream);
+  transform: translateY(-2px);
+}
+
+.social-link__icon {
+  flex: 0 0 auto;
+}
+
 .footer-copy {
   font-size: 0.85rem;
   opacity: 0.75;
