@@ -159,8 +159,7 @@ a:hover {
 }
 
 .logo {
-  --logo-mark-w: clamp(1.65rem, 4.2vw, 2.35rem);
-  --logo-mark-h: clamp(2.2rem, 5.5vw, 3.15rem);
+  --logo-img-size: clamp(2.2rem, 5.5vw, 3.15rem);
   display: inline-flex;
   align-items: center;
   gap: clamp(0.45rem, 1.5vw, 0.7rem);
@@ -179,58 +178,11 @@ a:hover {
   outline-offset: 4px;
 }
 
-/* Oval landscape mark (CSS-only nod to soil / hills / sky) */
-.logo__mark {
-  position: relative;
+.logo__img {
   flex: 0 0 auto;
-  width: var(--logo-mark-w);
-  height: var(--logo-mark-h);
-  border-radius: 50%;
-  border: 2px solid var(--deep-green);
-  overflow: hidden;
-  background: var(--deep-green);
-  box-sizing: border-box;
-}
-
-.logo__mark-layer {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.logo__mark-layer--sky {
-  background:
-    radial-gradient(circle at 50% 18%, color-mix(in srgb, #f4e4a8 85%, #e9a756) 0%, transparent 42%),
-    linear-gradient(180deg, #b8d9e8 0%, #9ec9e0 55%, #8ab8d4 100%);
-}
-
-.logo__mark-layer--hills {
-  bottom: 0;
-  top: auto;
-  height: 52%;
-  background:
-    radial-gradient(ellipse 120% 80% at 50% 100%, color-mix(in srgb, var(--sage) 92%, var(--deep-green)) 0%, transparent 72%),
-    radial-gradient(ellipse 90% 55% at 28% 95%, color-mix(in srgb, var(--sage) 75%, #5a7a58) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 45% at 78% 98%, color-mix(in srgb, var(--sage) 70%, var(--deep-green)) 0%, transparent 50%);
-  mix-blend-mode: multiply;
-  opacity: 0.92;
-}
-
-.logo__mark-layer--soil {
-  bottom: 0;
-  top: auto;
-  height: 34%;
-  background-image:
-    repeating-linear-gradient(
-      -18deg,
-      transparent 0 3px,
-      color-mix(in srgb, var(--cream) 16%, transparent) 3px 4px
-    ),
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--soil) 42%, transparent) 0%,
-      color-mix(in srgb, var(--soil) 92%, #3d2418) 100%
-    );
+  width: var(--logo-img-size);
+  height: var(--logo-img-size);
+  display: block;
 }
 
 /* Wordmark: deep green words, sage ampersand */

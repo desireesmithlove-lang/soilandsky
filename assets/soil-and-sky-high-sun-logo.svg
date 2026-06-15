@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300" role="img" aria-labelledby="title desc">
+  <title id="title">Soil and Sky Palm Tree and High Sun Logo</title>
+  <desc id="desc">Bold minimalist SVG logo with a palm tree on the left, a high sun on the right, and a curved soil horizon line.</desc>
+
+  <g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Soil / ground line -->
+    <path d="M28 236 C 84 211, 164 211, 272 236" stroke-width="12"/>
+
+    <!-- Palm trunk -->
+    <path d="M96 218 C 77 166, 78 119, 101 78" stroke-width="12"/>
+
+    <!-- Layered palm bark marks, angled L-corner shapes -->
+    <path d="M91 192 L 85 186 L 77 189" stroke-width="8"/>
+    <path d="M87 168 L 81 162 L 73 165" stroke-width="8"/>
+    <path d="M85 144 L 79 138 L 71 141" stroke-width="8"/>
+    <path d="M87 120 L 81 114 L 73 117" stroke-width="8"/>
+    <path d="M92 96 L 86 90 L 78 93" stroke-width="8"/>
+
+    <!-- Palm fronds, simplified for small-size readability -->
+    <path d="M101 78 C 78 54, 52 50, 21 70" stroke-width="12"/>
+    <path d="M101 78 C 87 43, 75 29, 58 19" stroke-width="12"/>
+    <path d="M101 78 C 100 43, 104 25, 119 16" stroke-width="12"/>
+    <path d="M101 78 C 125 50, 150 43, 182 52" stroke-width="12"/>
+    <path d="M101 78 C 128 74, 153 83, 171 109" stroke-width="12"/>
+    <path d="M101 78 C 90 88, 83 103, 83 127" stroke-width="12"/>
+    <path d="M101 78 C 115 86, 125 100, 125 125" stroke-width="12"/>
+
+    <!-- High sun -->
+    <circle cx="215" cy="150" r="28" stroke-width="10"/>
+
+    <!-- Bold sun rays -->
+    <path d="M215 92 L 215 118" stroke-width="10"/>
+    <path d="M176 111 L 192 127" stroke-width="10"/>
+    <path d="M159 148 L 185 148" stroke-width="10"/>
+    <path d="M177 185 L 193 169" stroke-width="10"/>
+    <path d="M254 111 L 238 127" stroke-width="10"/>
+    <path d="M271 148 L 245 148" stroke-width="10"/>
+    <path d="M253 185 L 237 169" stroke-width="10"/>
+  </g>
+</svg>

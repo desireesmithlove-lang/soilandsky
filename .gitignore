@@ -1,1 +1,6 @@
 .DS_Store
+
+# here.now local publish state (claim tokens, slugs)
+.herenow/
+skills-lock.json
+.agents/
