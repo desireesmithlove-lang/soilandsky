@@ -1043,26 +1043,25 @@ fieldset.form-field {
   color: var(--deep-green);
 }
 
-/* Scattered rotations for the polaroid board (desktop) */
+/* Scattered rotations for the polaroid board (desktop).
+   nth-child cycles keep the look natural for any number of photos. */
 @media (min-width: 720px) {
-  .polaroid--1 { transform: rotate(-3deg); margin-top: 0.5rem; }
-  .polaroid--2 { transform: rotate(2.5deg); margin-top: 1.75rem; }
-  .polaroid--3 { transform: rotate(-1.5deg); margin-top: 0.25rem; }
-  .polaroid--4 { transform: rotate(2deg); margin-top: 1.5rem; }
-  .polaroid--5 { transform: rotate(-2.5deg); margin-top: 0.5rem; }
-  .polaroid--6 { transform: rotate(1.5deg); margin-top: 1.25rem; }
-  .polaroid--7 { transform: rotate(-1.5deg); margin-top: 0.75rem; }
+  .polaroid:nth-child(6n + 1) { transform: rotate(-3deg); margin-top: 0.5rem; }
+  .polaroid:nth-child(6n + 2) { transform: rotate(2.5deg); margin-top: 1.75rem; }
+  .polaroid:nth-child(6n + 3) { transform: rotate(-1.5deg); margin-top: 0.25rem; }
+  .polaroid:nth-child(6n + 4) { transform: rotate(2deg); margin-top: 1.5rem; }
+  .polaroid:nth-child(6n + 5) { transform: rotate(-2.5deg); margin-top: 0.5rem; }
+  .polaroid:nth-child(6n + 6) { transform: rotate(1.5deg); margin-top: 1.25rem; }
 }
 
 /* Gentler rotations on tablet/phone so nothing crops or collides */
 @media (max-width: 719px) {
-  .polaroid--1 { transform: rotate(-2deg); }
-  .polaroid--2 { transform: rotate(1.5deg); }
-  .polaroid--3 { transform: rotate(-1deg); }
-  .polaroid--4 { transform: rotate(1.5deg); }
-  .polaroid--5 { transform: rotate(-1.5deg); }
-  .polaroid--6 { transform: rotate(1deg); }
-  .polaroid--7 { transform: rotate(-1deg); }
+  .polaroid:nth-child(6n + 1) { transform: rotate(-2deg); }
+  .polaroid:nth-child(6n + 2) { transform: rotate(1.5deg); }
+  .polaroid:nth-child(6n + 3) { transform: rotate(-1deg); }
+  .polaroid:nth-child(6n + 4) { transform: rotate(1.5deg); }
+  .polaroid:nth-child(6n + 5) { transform: rotate(-1.5deg); }
+  .polaroid:nth-child(6n + 6) { transform: rotate(1deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
